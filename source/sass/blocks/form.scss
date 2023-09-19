@@ -1,0 +1,492 @@
+.form__container {
+  display: flex;
+  justify-content: start;
+  max-width: 1440px;
+  color: $color-default-white;
+  padding-top: 120px;
+  padding-bottom: 57px;
+  border-radius: 16px;
+
+  @include vp-1199 {
+    padding-top: 99px;
+    padding-bottom: 59px;
+  }
+
+  @include vp-767 {
+    padding-top: 67px;
+    padding-bottom: 29px;
+  }
+}
+
+.form__content {
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+
+.form__img {
+  position: absolute;
+  content: "";
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+
+  @include vp-767 {
+    display: none;
+  }
+}
+
+.form__img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 16px;
+}
+
+.form__wrapper {
+  max-width: 498px;
+  display: flex;
+  flex-direction: column;
+  border-radius: 16px;
+  background-color: $color-cerulean;
+  padding: 81px 73px 50px 73px;
+  margin: 0;
+
+  @include vp-1199 {
+    max-width: unset;
+    width: 65.2%;
+    padding: 61px 45px 56px 45px;
+  }
+
+  @include vp-767 {
+    width: 100%;
+    padding: 51px 15px 48px 15px;
+  }
+
+  h3 {
+    width: 100%;
+    margin: 0 0 29px 0;
+    font-size: 32px;
+    font-weight: 400;
+    line-height: 36px;
+
+    @include vp-1199 {
+      font-size: 28px;
+      line-height: 28px;
+    }
+
+    @include vp-767 {
+      font-size: 18px;
+      line-height: 22px;
+      margin-bottom: 17px;
+    }
+  }
+
+  p {
+    width: 100%;
+    margin: 0 0 20px 0;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 24px;
+    color: $color-alabaster;
+    opacity: 0.9;
+
+    @include vp-1199 {
+      line-height: 20px;
+      margin-bottom: 30px;
+      letter-spacing: -0.5px;
+    }
+
+    @include vp-767 {
+      font-size: 14px;
+      line-height: 20px;
+      margin-bottom: 25px;
+      padding-right: 10px;
+    }
+  }
+}
+
+.form__inner-wrapper {
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  row-gap: 12px;
+
+  @include vp-1199 {
+    row-gap: 16px;
+  }
+
+  @include vp-767 {
+    row-gap: 19px;
+  }
+}
+
+.form__input input {
+  min-height: 48px;
+  height: 48px;
+  opacity: 0.8;
+  padding: 16px 25px;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  color: $color-default-white;
+  order: 2;
+  cursor: pointer;
+
+  &:disabled {
+    border: 1px solid rgba(255, 255, 255, 0.4);
+    background-color: rgba(255, 255, 255, 0.2);
+
+    & + label {
+      color: $color-alabaster;
+      opacity: 0.6;
+    }
+  }
+
+  &:hover {
+    border: 1px solid $color-default-white;
+
+    & + label {
+      color: $color-alabaster;
+      opacity: 1;
+    }
+  }
+
+  &:focus,
+  &:focus-visible,
+  &:active {
+    border: 1px solid $color-default-white;
+    outline: none;
+    cursor: text;
+
+    & + label {
+      color: $color-alabaster;
+      opacity: 1;
+    }
+  }
+}
+
+.form__input label {
+  order: 1;
+}
+
+.form__textarea {
+  display: flex;
+
+  @include vp-1199 {
+    margin: 0;
+  }
+}
+
+.form__textarea label {
+  order: 1;
+  display: block;
+  width: 100%;
+  margin-top: 5px;
+  margin-bottom: 10px;
+}
+
+.form__textarea textarea {
+  padding: 16px 25px;
+  color: $color-default-white;
+  font-size: 16px;
+  opacity: 0.8;
+  order: 2;
+
+  &:disabled {
+    border: 1px solid rgba(255, 255, 255, 0.4);
+    background-color: rgba(255, 255, 255, 0.2);
+
+    & + label {
+      color: $color-alabaster;
+      opacity: 0.6;
+    }
+  }
+
+  &:hover {
+    border: 1px solid $color-default-white;
+
+    & + label {
+      color: $color-alabaster;
+      opacity: 1;
+    }
+  }
+
+  &:focus,
+  &:focus-visible,
+  &:active {
+    border: 1px solid $color-default-white;
+    outline: none;
+    cursor: text;
+
+    & + label {
+      color: $color-alabaster;
+      opacity: 1;
+    }
+  }
+}
+
+.form__inner-wrapper label {
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 18px;
+  color: $color-alabaster;
+  opacity: 0.8;
+
+  @include vp-767 {
+    font-size: 12px;
+    line-height: 14px;
+  }
+}
+
+.form__btn {
+  width: 100%;
+
+  @include vp-767 {
+    min-height: 42px;
+  }
+}
+
+.form__btn span:nth-child(1n) {
+  width: 87%;
+  text-align: center;
+  padding-right: 15px;
+
+  @include vp-767 {
+    font-size: 12px;
+    line-height: 12px;
+    padding-right: 19px;
+  }
+}
+
+.form__btn span:nth-child(2n) {
+  width: 46px;
+  height: 46px;
+
+  @include vp-767 {
+    width: 34px;
+    height: 34px;
+  }
+}
+
+.form__checkbox {
+  position: relative;
+  margin: 0;
+  padding: 0;
+  margin-bottom: 30px;
+  cursor: unset;
+  z-index: 1;
+
+  @include vp-1199 {
+    margin-bottom: 29px;
+  }
+
+  @include vp-767 {
+    margin-bottom: 11px;
+  }
+}
+
+.form__checkbox label {
+  opacity: 1;
+  padding-left: 30px;
+
+  @include vp-767 {
+    padding-left: 30px;
+  }
+}
+
+.form__checkbox-label {
+  color: $color-default-white;
+  opacity: 0.9;
+}
+
+.form__select {
+  position: relative;
+}
+
+.form__select-list {
+  position: absolute;
+  left: 0;
+  border-radius: 8px;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  overflow: auto;
+  max-height: 162px;
+  z-index: 2;
+  order: 3;
+}
+
+.form__select-item {
+  color: $color-charcoal;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 14px;
+  padding: 17px 20px;
+  background-color: $color-default-white;
+
+  &:hover {
+    color: $color-cerulean;
+    background-color: $color-default-white;
+  }
+
+  &:focus,
+  &:focus-visible,
+  &:active {
+    color: $color-default-white;
+    background-color: $color-cerulean;
+    outline: none;
+  }
+}
+
+.form__item[aria-selected="true"] {
+  background-color: $color-default-white;
+}
+
+.form__button-select {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  padding: 17px 20px;
+  margin-bottom: 6px;
+  height: 50px;
+  min-height: 48px;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  color: $color-charcoal;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 14px;
+  background-color: transparent;
+  border-radius: 5px;
+  outline: 0;
+  order: 2;
+  cursor: pointer;
+
+  &:disabled {
+    border: 1px solid rgba(255, 255, 255, 0.3);
+  }
+
+  &:hover {
+    outline: none;
+    border: 1px solid $color-default-white;
+  }
+
+  &:focus,
+  &:focus-visible,
+  &:active {
+    outline: none;
+    border: 1px solid $color-default-white;
+
+    & .form__select-text {
+      color: $color-alabaster;
+      opacity: 1;
+    }
+  }
+
+  &:hover + p,
+  &:focus + p,
+  &:focus-visible + p {
+    outline: none;
+    color: $color-alabaster;
+    opacity: 1;
+  }
+
+  @include vp-1199 {
+    margin-bottom: 0;
+  }
+
+  @include vp-767 {
+    margin-bottom: 3px;
+    min-height: 48px;
+    height: 44px;
+  }
+}
+
+.form__select-text {
+  color: $color-alabaster;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 14px;
+}
+
+.form__select-icon {
+  background-color: $color-default-white;
+  opacity: 1;
+  flex-shrink: 0;
+  width: 14px;
+  height: 8px;
+  margin-left: auto;
+}
+
+.is-open .form__button-select {
+  border: 1px solid $color-default-white;
+}
+
+.form__select p {
+  color: $color-alabaster;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 14px;
+  opacity: 0.8;
+  order: 1;
+  margin-bottom: 0;
+
+  @include vp-767 {
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 14px;
+  }
+}
+
+.form__toggle-icon {
+  border-radius: 2px;
+  border: 1px solid rgba(255, 255, 255, 0.7);
+  width: 20px;
+  height: 20px;
+  top: 6px;
+  cursor: pointer;
+
+  @include vp-767 {
+    top: 14px;
+  }
+
+  &:hover,
+  &:focus,
+  &:focus-visible,
+  &:active {
+    border: 1px solid $color-default-white;
+    opacity: 1;
+    outline: none;
+  }
+}
+
+.form__toggle-icon::before {
+  width: 10px;
+  height: 10px;
+}
+
+.custom-toggle input:checked + .form__toggle-icon::before {
+  width: 10px;
+  height: 10px;
+  background-color: $color-cerulean;
+}
+
+.custom-toggle input:checked + .form__toggle-icon {
+  border: 1px solid $color-default-white;
+  background-color: $color-default-white;
+
+  &:hover,
+  &:focus,
+  &:focus-visible {
+    background-color: $color-cerulean;
+
+    &::before {
+      background-color: $color-default-white;
+      mask-image: url("data:image/svg+xml,%3Csvg width='10' height='8' viewBox='0 0 10 8' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1 3.5L3.94737 7L9 1' stroke='%23316DC2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E ");
+    }
+  }
+}

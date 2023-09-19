@@ -1,0 +1,243 @@
+.header {
+  position: absolute;
+  content: "";
+  width: 100%;
+
+  @include vp-767 {
+    &:has(.header__nav--opened) {
+      .header__logo {
+        display: none;
+      }
+    }
+  }
+}
+
+.header__container {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  padding-top: 30px;
+  z-index: 3;
+
+  @include vp-767 {
+    padding-top: 19px;
+  }
+}
+
+.header__logo {
+  &:active {
+    opacity: 0.4;
+  }
+}
+
+.header__nav {
+  transition: 0.3s all ease-in-out;
+}
+
+.header__nav--opened {
+  transition: all ease 0.5s;
+
+  @include vp-767 {
+    min-width: 290px;
+    width: 95%;
+    margin: 0 auto;
+  }
+}
+
+.header__nav__btn {
+  transition: all ease 0.5s;
+}
+
+.header__nav__btn span:nth-child(1n) {
+  width: 44px;
+  max-width: 44px;
+}
+
+.header__nav__btn span:nth-child(2n) {
+  position: relative;
+  flex-grow: 0;
+  display: block;
+  height: 46px;
+  width: 46px;
+  background-color: $color-cerulean;
+  border-radius: 50%;
+  margin: 0;
+
+  &::after {
+    position: absolute;
+    content: url("../img/svg/menu.svg");
+    top: 0;
+    left: 0;
+    margin: 0 auto;
+    width: 18px;
+    height: 8px;
+  }
+}
+
+.header__nav__list {
+  // visibility: hidden;
+  display: none;
+  opacity: 0;
+  margin: 0;
+  padding: 0;
+}
+
+.header__nav--opened .header__nav__btn {
+  position: relative;
+  width: 286px;
+  background-color: $color-cerulean;
+  color: $color-default-white;
+  z-index: 555;
+  transition: all ease 0.5s;
+
+  @include vp-767 {
+    min-width: 290px;
+    width: 100%;
+    margin: 0 auto;
+  }
+}
+
+.header__nav--opened span:nth-child(2n) {
+  background-color: $color-default-white;
+
+  &::after {
+    content: url("../img/svg/cross.svg");
+    top: 0;
+    width: 20px;
+    height: 20px;
+  }
+}
+
+.header__nav--opened .header__nav__list {
+  visibility: visible;
+  opacity: 1;
+  display: block;
+  overflow: auto;
+  max-height: calc(100vh - 100px);
+  position: absolute;
+  content: "";
+  width: 286px;
+  top: 105%;
+  margin: 0;
+  padding: 30px 25px 12px 25px;
+  list-style-type: none;
+  background-color: $color-cerulean;
+  border-radius: 16px;
+  transition: all ease 0.6s;
+
+  @include vp-767 {
+    min-width: 290px;
+    width: 90%;
+    padding: 30px 25px 13px 25px;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+  }
+}
+
+.header__nav__item {
+  margin-bottom: 18px;
+}
+
+.header__nav__item a {
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 16px;
+  letter-spacing: 0.32px;
+  text-transform: uppercase;
+  color: $color-default-white;
+  transition: all 0.2s ease-out 0s;
+  opacity: 0.7;
+
+  &:hover,
+  &:focus-visible {
+    outline: none;
+    opacity: 1;
+  }
+}
+
+.header__nav__dropdown-item {
+  margin: 0 0 4px 0;
+}
+
+.header__nav__dropdown-item a {
+  text-transform: none;
+}
+
+.header__nav__item button {
+  position: relative;
+  display: flex;
+  justify-content: start;
+  padding: 0;
+  margin: 0;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 16px;
+  letter-spacing: 0.32px;
+  text-transform: uppercase;
+  border: none;
+  user-select: none;
+  cursor: pointer;
+  opacity: 0.7;
+  background-color: $color-cerulean;
+  color: $color-default-white;
+  transition: all ease 0.5s;
+
+  &:hover,
+  &:focus-visible {
+    outline: none;
+    opacity: 1;
+  }
+}
+
+.header__nav__item--button-open button {
+  margin-bottom: 13px;
+}
+
+.header__nav__item-programms-button span,
+.header__nav__item-news-button span {
+  position: relative;
+
+  &::after {
+    position: absolute;
+    content: "";
+    background-image: url("../img/svg/arrow-down.svg");
+    transform: rotate(180deg);
+    background-repeat: no-repeat;
+    width: 12px;
+    height: 12px;
+    top: 2px;
+    left: calc(100% + 10px);
+  }
+}
+
+.header__nav__dropdown-programms-list,
+.header__nav__dropdown-news-list {
+  padding: 0;
+  margin-left: 15px;
+  list-style-type: none;
+  transition: all ease 0.5s;
+}
+
+.header__nav__item--button {
+  margin-bottom: 18px;
+}
+
+.header__nav__item--button-open {
+  margin-bottom: 12px;
+}
+
+.header__nav__item--button-open span::after {
+  transform: rotate(0);
+}
+
+.header__nav__item--button-open .header__nav__dropdown-programms-list,
+.header__nav__item--button-open .header__nav__dropdown-news-list {
+  display: block;
+}
+
+.header__nav__item--button-close .header__nav__dropdown-programms-list,
+.header__nav__item--button-close .header__nav__dropdown-news-list {
+  display: none;
+}

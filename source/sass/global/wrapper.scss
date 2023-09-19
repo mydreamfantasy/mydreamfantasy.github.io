@@ -1,0 +1,10 @@
+.wrapper:has(.header__nav--opened)::before {
+  content: "";
+  position: fixed;
+  left: 0;
+  top: 0;
+  height: 100vh;
+  width: 100vw;
+  background-color: rgba(13, 29, 51, 0.4);
+  z-index: 3;
+}
